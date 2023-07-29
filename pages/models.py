@@ -15,7 +15,9 @@ class Movie(models.Model):
     price=models.CharField(max_length=20)
     created_At=models.DateField(auto_now_add=True)
     duration=models.IntegerField(default=0)
-    #genre=models.ForeignKey(Genre,on_delete=models.CASCADE,blank=True,null=True)
+    rated=models.DecimalField(max_digits=50,decimal_places=2)
+    genre=models.ForeignKey(Genre,on_delete=models.CASCADE,blank=True,null=True)
+
     def __str__(self):
         return self.title
 
