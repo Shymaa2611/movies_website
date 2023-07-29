@@ -1,8 +1,5 @@
 {%load static%}
-{% load django_bootstrap5 %}
-{% bootstrap_css %}
-{% bootstrap_javascript %}
-{% bootstrap_messages %}
+
 <!doctype html>
 <!doctype html>
 
@@ -33,17 +30,16 @@
 
       <div class="inputBox"> 
 
-        {% bootstrap_field form.username %}
-
+       {{form.username}}
       </div> 
 
       <div class="inputBox"> 
-        {% bootstrap_field form.password1 %}
+        {{form.password1}}
 
       </div> 
       <div class="inputBox"> 
-        {% bootstrap_field form.password2 %}
-
+        
+      {{form.password2}}
       </div> 
 
       <div class="links"> <a href="#"></a> <a href="#"></a> 
