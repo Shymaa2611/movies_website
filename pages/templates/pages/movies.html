@@ -1,0 +1,230 @@
+{%extends 'base.html'%}
+{%load static %}
+{%block content%}
+<section class="upcoming">
+    <div class="container">
+
+      <div class="flex-wrapper">
+
+        <div class="title-wrapper">
+          <p class="section-subtitle">Online Streaming</p>
+
+          <h2 class="h2 section-title">Upcoming Movies</h2>
+        </div>
+
+        <ul class="filter-list">
+
+          <li>
+            <button class="filter-btn">Movies</button>
+          </li>
+
+          <li>
+            <button class="filter-btn">TV Shows</button>
+          </li>
+
+          <li>
+            <button class="filter-btn">Anime</button>
+          </li>
+
+        </ul>
+
+      </div>
+
+      <ul class="movies-list  has-scrollbar">
+      {% for movie in movies%}
+        <li>
+          <div class="movie-card">
+
+            <a href="{% url 'detail' movie.id%}">
+              <figure class="card-banner">
+                <img src="{{movie.image.url}}" alt="The Northman movie poster">
+              </figure>
+            </a>
+
+            <div class="title-wrapper">
+              <a href="{% url 'detail' movie.id%}">
+                <h3 class="card-title">{{movie.title}}</h3>
+              </a>
+
+              <time datetime="2022">{{movie.created_At.year}}</time>
+            </div>
+
+            <div class="card-meta">
+              <div class="badge badge-outline">{{movie.quality}}</div>
+
+              <div class="duration">
+                <ion-icon name="time-outline"></ion-icon>
+
+                <time datetime="PT137M">{{movie.duration}} min</time>
+              </div>
+
+              <div class="rating">
+                <ion-icon name="star"></ion-icon>
+
+                <data>8.5</data>
+              </div>
+            </div>
+
+          </div>
+        </li>
+        {%endfor%}
+
+
+      </ul>
+
+    </div>
+  </section>
+
+
+  <section class="top-rated">
+    <div class="container">
+
+      <p class="section-subtitle">Online Streaming</p>
+
+      <h2 class="h2 section-title">Top Rated Movies</h2>
+
+      <ul class="filter-list">
+
+        <li>
+          <button class="filter-btn">Movies</button>
+        </li>
+
+        <li>
+          <button class="filter-btn">TV Shows</button>
+        </li>
+
+        <li>
+          <button class="filter-btn">Documentary</button>
+        </li>
+
+        <li>
+          <button class="filter-btn">Sports</button>
+        </li>
+
+      </ul>
+
+      <ul class="movies-list">
+         {%for top_rate in top_rated%}
+        <li>
+          <div class="movie-card">
+
+            <a href="./movie-details.html">
+              <figure class="card-banner">
+                <img src="{{top_rate.image.url}}" alt="Sonic the Hedgehog 2 movie poster">
+              </figure>
+            </a>
+
+            <div class="title-wrapper">
+              <a href="./movie-details.html">
+                <h3 class="card-title">{{top_rate.title}}</h3>
+              </a>
+
+              <time datetime="2022">{{top_rate.created_At.year}}</time>
+            </div>
+
+            <div class="card-meta">
+              <div class="badge badge-outline">{{top_rate.quality}}</div>
+
+              <div class="duration">
+                <ion-icon name="time-outline"></ion-icon>
+
+                <time datetime="PT122M">{{top_rate.duration}} min</time>
+              </div>
+
+              <div class="rating">
+                <ion-icon name="star"></ion-icon>
+
+                <data>7.8</data>
+              </div>
+            </div>
+
+          </div>
+        </li>
+{%endfor%}
+       
+      </ul>
+
+    </div>
+  </section>
+
+  <section class="tv-series">
+    <div class="container">
+
+      <p class="section-subtitle">Best TV Series</p>
+
+      <h2 class="h2 section-title">World Best TV Series</h2>
+
+      <ul class="movies-list">
+     {%for best in best_Seller%}
+        <li>
+          <div class="movie-card">
+
+            <a href="./movie-details.html">
+              <figure class="card-banner">
+                <img src="{{best.image.url}}" alt="Moon Knight movie poster">
+              </figure>
+            </a>
+
+            <div class="title-wrapper">
+              <a href="./movie-details.html">
+                <h3 class="card-title">{{best.title}}</h3>
+              </a>
+
+              <time datetime="2022">{{best.created_At.year}}</time>
+            </div>
+
+            <div class="card-meta">
+              <div class="badge badge-outline">{{best.quality}}</div>
+
+              <div class="duration">
+                <ion-icon name="time-outline"></ion-icon>
+
+                <time datetime="PT47M">{{best.duration}}min</time>
+              </div>
+
+              <div class="rating">
+                <ion-icon name="star"></ion-icon>
+
+                <data>8.6</data>
+              </div>
+            </div>
+
+          </div>
+        </li>
+{%endfor%}
+      </ul>
+
+    </div>
+  </section>
+
+
+
+
+
+  <!-- 
+    - #CTA
+  -->
+
+  <section class="cta">
+    <div class="container">
+
+      <div class="title-wrapper">
+        <h2 class="cta-title">Trial start first 30 days.</h2>
+
+        <p class="cta-text">
+          Enter your email to create or restart your membership.
+        </p>
+      </div>
+
+      <form action="" class="cta-form">
+        <input type="email" name="email" required placeholder="Enter your email" class="email-field">
+
+        <button type="submit" class="cta-form-btn">Get started</button>
+      </form>
+
+    </div>
+  </section>
+
+
+
+{%endblock%}
