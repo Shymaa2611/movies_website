@@ -13,7 +13,7 @@
 
           <figure class="movie-detail-banner">
 
-            <img src="{{movie.image.url}}" alt="Free guy movie poster">
+           <iframe src="{{movie.video_link}}"></iframe>
 
             <button class="play-btn">
               <ion-icon name="play-circle-outline"></ion-icon>
@@ -86,7 +86,8 @@
 
               <button class="btn btn-primary">
                 <ion-icon name="play"></ion-icon>
-                    <a href="{% url 'watchnow' movie.id%}"><span>Watch Now</span></a>
+
+                <span>Watch Now</span>
               </button>
 
             </div>

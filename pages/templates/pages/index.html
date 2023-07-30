@@ -130,7 +130,7 @@
                   <div class="rating">
                     <ion-icon name="star"></ion-icon>
 
-                    <data>8.5</data>
+                    <data>{{movie.rated}}</data>
                   </div>
                 </div>
 
@@ -264,14 +264,14 @@
             <li>
               <div class="movie-card">
 
-                <a href="./movie-details.html">
+                <a href="{%url 'detail' top_rate.id%}">
                   <figure class="card-banner">
                     <img src="{{top_rate.image.url}}" alt="Sonic the Hedgehog 2 movie poster">
                   </figure>
                 </a>
 
                 <div class="title-wrapper">
-                  <a href="./movie-details.html">
+                  <a href="{%url 'detail' top_rate.id%}">
                     <h3 class="card-title">{{top_rate.title}}</h3>
                   </a>
 
@@ -290,7 +290,7 @@
                   <div class="rating">
                     <ion-icon name="star"></ion-icon>
 
-                    <data>7.8</data>
+                    <data>{{top_rate.rated}}</data>
                   </div>
                 </div>
 
@@ -323,14 +323,14 @@
             <li>
               <div class="movie-card">
 
-                <a href="./movie-details.html">
+                <a href="{% url 'detail' best.id%}">
                   <figure class="card-banner">
                     <img src="{{best.image.url}}" alt="Moon Knight movie poster">
                   </figure>
                 </a>
 
                 <div class="title-wrapper">
-                  <a href="./movie-details.html">
+                  <a href="{% url 'detail' best.id%}">
                     <h3 class="card-title">{{best.title}}</h3>
                   </a>
 
@@ -349,7 +349,7 @@
                   <div class="rating">
                     <ion-icon name="star"></ion-icon>
 
-                    <data>8.6</data>
+                    <data>{{best.rated}}</data>
                   </div>
                 </div>
 
